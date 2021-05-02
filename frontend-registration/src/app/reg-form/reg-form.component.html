@@ -1,37 +1,78 @@
 <mat-card>
-    <mat-card-title class="mtb">
-        New User
-    </mat-card-title>
-    <form>
-            <mat-form-field appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="Enter Username" type="text" required>
-            </mat-form-field>
+  <mat-card-title class="mtb"> New User </mat-card-title>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        formControlName="username"
+        placeholder="Enter Username"
+        type="text"
+      />
+      <mat-error *ngIf="form.get('username').invalid"
+        >Please enter a username.</mat-error
+      >
+    </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter Password" type="password" required>
-            </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        placeholder="Enter Password"
+        type="password"
+      />
+      <mat-error *ngIf="form.get('password').invalid"
+        >Please enter a secure password. Minimum length 6</mat-error
+      >
+    </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Confirm Password</mat-label>
-                <input matInput placeholder="Confirm Password" type="password" required>
-            </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        matInput
+        formControlName="confirmPassword"
+        placeholder="Confirm Password"
+        type="password"
+      />
+      <mat-error *ngIf="form.get('confirmPassword').invalid">{{
+        comparePassword()
+      }}</mat-error>
+    </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Full Name</mat-label>
-                <input matInput placeholder="Enter Full Name" type="text" required>
-            </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Full Name</mat-label>
+      <input
+        matInput
+        formControlName="fullName"
+        placeholder="Enter Full Name"
+        type="text"
+      />
+      <mat-error *ngIf="form.get('fullName').invalid"
+        >Please enter full name.</mat-error
+      >
+    </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="abc@mail.com" [formControl]="email" type="text" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        placeholder="abc@mail.com"
+        type="text"
+      />
+      <mat-error *ngIf="form.get('email').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
 
-            <hr>
+    <hr />
 
-            <button mat-raised-button class="mt" color="primary">Submit</button>
-            <button mat-button class="mr">Cancle</button>
-    </form>
+    <button mat-raised-button class="mt" color="primary" type="submit">
+      Submit
+    </button>
+    <button mat-button class="mr" type="button" (click)="clearForm()">
+      Cancle
+    </button>
+  </form>
 </mat-card>

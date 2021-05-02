@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,14 +19,18 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 html,
 body,
 .app-frame {
-	height: 100%;
-	overflow: hidden;
-	margin: 0;
-	box-sizing: border-box;
-	// color: #e0e0e0;
-	color: $light-primary-text;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  // color: #e0e0e0;
+  color: $light-primary-text;
 }
 body {
-	margin: 0;
-	font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.grey-snackbar {
+  background: #424242;
 }
