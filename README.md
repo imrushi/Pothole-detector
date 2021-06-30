@@ -1,3 +1,9 @@
+# Setup Elastic & Kibana
+
+1. Download [Elasticsearch](https://www.elastic.co/downloads/elasticsearch) and [Kibana](https://www.elastic.co/downloads/kibana) & install it..
+2. Copy **elasticsearch.yml** from ELK Config folder and paste in Elasticsearch/Config folder.
+3. Copy **kibana.yml** from ELK Config folder and paste in Kibana/config folder.
+
 # Frontend - Angular
 
 ## Steps Enable x-pack for API calls
@@ -50,6 +56,8 @@ http.cors.allow-credentials: true
 ## Below is Raspberry pi side information
 
 # Logstash
+
+Install Logstash in Raspberry Pi follow this link https://toddysm.com/2020/06/09/learn-more-about-your-home-network-with-elastic-siem-part-1-setting-up-elastic-siem/
 
 ## Persistent Queue
 
